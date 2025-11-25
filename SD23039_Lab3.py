@@ -132,7 +132,12 @@ def display_simple_conditions(conditions: List[List[Any]]):
 # ----------------------------
 st.set_page_config(page_title="Scholarship Advisory Rule-Based System", page_icon="🎓", layout="wide")
 st.title("🎓 Scholarship Advisory Rule-Based System")
-st.caption("A transparent decision support tool based on the university's criteria for scholarship eligibility.")
+st.markdown("A transparent decision support tool based on the university's criteria for scholarship eligibility.")
+st.info("""
+    This application is a **Rule-Based System (RBS)** designed to automate transparent scholarship eligibility decisions.
+    It evaluates applicant facts (CGPA, income, co-curricular score, and disciplinary actions) against a prioritized 
+    Knowledge Base of IF-THEN rules to instantly determine the appropriate decision (AWARD FULL/PARTIAL, REJECT, or REVIEW).
+""")
 
 # --- SIDEBAR INPUT ---
 with st.sidebar:
@@ -231,4 +236,5 @@ if run:
                     display_simple_conditions(r.get('conditions', []))
 
 else:
+
     st.info("Set applicant details in the sidebar and click **Evaluate Eligibility** to run the advisory system.")
